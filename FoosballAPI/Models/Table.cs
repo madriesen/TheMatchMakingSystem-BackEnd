@@ -12,7 +12,6 @@ namespace FoosballAPI.Models
         public string Name { get; set; }
         public string? CompanyName { get; set; }
         public string Adres { get; set; }
-        public string Foto { get; set; }
 
         //Relations
         public int UserId { get; set; }

@@ -8,17 +8,14 @@ namespace FoosballAPI.Models
     public class Team
     {
         public long  TeamID { get; set; }
-        public string Name { get; set; }
-        public string CompanyName { get; set; }
-        public string Location { get; set; }
-        public string Foto { get; set; }
 
         //Relations
-        public int CaptainID { get; set; }
-        public User Captain { get; set; }
+        public int PloegID { get; set; }
+        public Ploeg Ploeg { get; set; }
+        public int Player1Id { get; set; }
+        public User Player1 { get; set; }
 
-        //Max 2 personen per team, daarom geen lijst van users
-        public int UserID { get; set; }
-        public User User { get; set; }
+        public int Player2ID { get; set; }
+        public User Player2 { get; set; }
     }
 }
