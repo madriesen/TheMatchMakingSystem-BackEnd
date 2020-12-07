@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AngularProjectAPI.Helpers
+namespace FoosballAPI.Helpers
 {
     public class AppSettings
     {

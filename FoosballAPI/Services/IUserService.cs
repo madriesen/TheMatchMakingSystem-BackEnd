@@ -1,10 +1,10 @@
-﻿using AngularProjectAPI.Models;
+﻿using FoosballAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AngularProjectAPI.Services
+namespace FoosballAPI.Services
 {
     public interface IUserService
     {

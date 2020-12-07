@@ -1,6 +1,6 @@
-﻿using AngularProjectAPI.Data;
-using AngularProjectAPI.Helpers;
-using AngularProjectAPI.Models;
+﻿using FoosballAPI.Data;
+using FoosballAPI.Helpers;
+using FoosballAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -12,22 +12,22 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AngularProjectAPI.Services
+namespace FoosballAPI.Services
 {
     public class UserService : IUserService
     {
         private readonly AppSettings _appSettings;
-        private readonly NewsContext _newsContext;
+        private readonly ApiContext _Context;
 
-        public UserService(IOptions<AppSettings> appSettings, NewsContext newsContext)
+        public UserService(IOptions<AppSettings> appSettings, ApiContext context)
         {
             _appSettings = appSettings.Value;
-            _newsContext = newsContext;
+            _Context = context;
         }
 
         public User Authenticate(string username, string password)
         {
-            var user = _newsContext.Users.Include(r=>r.Role).SingleOrDefault(x => x.Username == username && x.Password == password);
+            var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Username == username && x.Password == password);
 
             // return null if user not found
             if (user == null)
