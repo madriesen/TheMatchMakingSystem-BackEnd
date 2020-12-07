@@ -14,52 +14,52 @@ namespace FoosballAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TeamController : ControllerBase
+    public class PloegController : ControllerBase
     {
         private readonly ApiContext _context;
 
-        public TeamController(ApiContext context)
+        public PloegController(ApiContext context)
         {
             _context = context;
         }
 
-        //GET: api/Team
+        //GET: api/Ploeg
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Team>>> GetTeams()
+        public async Task<ActionResult<IEnumerable<Ploeg>>> GetPloegs()
         {
-            return await _context.Teams.ToListAsync();
+            return await _context.Ploegen.ToListAsync();
         }
 
-        //GET: api/Team/{TeamID}
+        //GET: api/Ploeg/{PloegID}
         [Authorize]
         [HttpGet("{id}")]
-        public async Task<ActionResult<Team>> GetTeamsByID(int id)
+        public async Task<ActionResult<Ploeg>> GetPloegsByID(int id)
         {
-            return await _context.Teams.FindAsync(id);
+            return await _context.Ploegen.FindAsync(id);
         }
 
-        //POST: api/Team
+        //POST: api/Ploeg
         [HttpPost]
-        public async Task<ActionResult<Team>> PostTeam(Team team)
+        public async Task<ActionResult<Ploeg>> PostPloeg(Ploeg ploeg)
         {
-            _context.Teams.Add(team);
+            _context.Ploegen.Add(ploeg);
             await _context.SaveChangesAsync();
 
-            return Ok(team);
+            return Ok(ploeg);
         }
 
-        // PUT: api/Team/{TeamID}
+        // PUT: api/Ploeg/{PloegID}
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<ActionResult<Team>> PutTeam(int id, Team team)
+        public async Task<ActionResult<Ploeg>> PutPloeg(int id, Ploeg ploeg)
         {
-            if (id != team.TeamID)
+            if (id != ploeg.PloegID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(team).State = EntityState.Modified;
+            _context.Entry(ploeg).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace FoosballAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TeamExists(id))
+                if (!PloegExists(id))
                 {
                     return NotFound();
                 }
@@ -77,29 +77,29 @@ namespace FoosballAPI.Controllers
                 }
             }
 
-            return team;
+            return ploeg;
         }
 
-        //DELETE: api/Team/{TeamID}
+        //DELETE: api/Ploeg/{PloegID}
         [HttpDelete("{id}")]
         [Authorize]
-        public async Task<ActionResult<Team>> DeleteTeam(int id)
+        public async Task<ActionResult<Ploeg>> DeletePloeg(int id)
         {
-            var team = await _context.Teams.FindAsync(id);
-            if (team == null)
+            var Ploeg = await _context.Ploegen.FindAsync(id);
+            if (Ploeg == null)
             {
                 return NotFound();
             }
 
-            _context.Teams.Remove(team);
+            _context.Ploegen.Remove(Ploeg);
             await _context.SaveChangesAsync();
 
-            return team;
+            return Ploeg;
         }
 
-        private bool TeamExists(int id)
+        private bool PloegExists(int id)
         {
-            return _context.Teams.Any(e => e.TeamID == id);
+            return _context.Ploegen.Any(e => e.PloegID == id);
         }
     }
 }

@@ -14,52 +14,52 @@ namespace FoosballAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TeamController : ControllerBase
+    public class TournooiController : ControllerBase
     {
         private readonly ApiContext _context;
 
-        public TeamController(ApiContext context)
+        public TournooiController(ApiContext context)
         {
             _context = context;
         }
 
-        //GET: api/Team
+        //GET: api/Tournooi
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Team>>> GetTeams()
+        public async Task<ActionResult<IEnumerable<Tournooi>>> GetTournoois()
         {
-            return await _context.Teams.ToListAsync();
+            return await _context.Tournooien.ToListAsync();
         }
 
-        //GET: api/Team/{TeamID}
+        //GET: api/Tournooi/{TournooiID}
         [Authorize]
         [HttpGet("{id}")]
-        public async Task<ActionResult<Team>> GetTeamsByID(int id)
+        public async Task<ActionResult<Tournooi>> GetTournooisByID(int id)
         {
-            return await _context.Teams.FindAsync(id);
+            return await _context.Tournooien.FindAsync(id);
         }
 
-        //POST: api/Team
+        //POST: api/Tournooi
         [HttpPost]
-        public async Task<ActionResult<Team>> PostTeam(Team team)
+        public async Task<ActionResult<Tournooi>> PostTournooi(Tournooi tournooi)
         {
-            _context.Teams.Add(team);
+            _context.Tournooien.Add(tournooi);
             await _context.SaveChangesAsync();
 
-            return Ok(team);
+            return Ok(tournooi);
         }
 
-        // PUT: api/Team/{TeamID}
+        // PUT: api/Tournooi/{TournooiID}
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<ActionResult<Team>> PutTeam(int id, Team team)
+        public async Task<ActionResult<Tournooi>> PutTournooi(int id, Tournooi tournooi)
         {
-            if (id != team.TeamID)
+            if (id != tournooi.TournooiID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(team).State = EntityState.Modified;
+            _context.Entry(tournooi).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace FoosballAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TeamExists(id))
+                if (!TournooiExists(id))
                 {
                     return NotFound();
                 }
@@ -77,29 +77,29 @@ namespace FoosballAPI.Controllers
                 }
             }
 
-            return team;
+            return tournooi;
         }
 
-        //DELETE: api/Team/{TeamID}
+        //DELETE: api/Tournooi/{TournooiID}
         [HttpDelete("{id}")]
         [Authorize]
-        public async Task<ActionResult<Team>> DeleteTeam(int id)
+        public async Task<ActionResult<Tournooi>> DeleteTournooi(int id)
         {
-            var team = await _context.Teams.FindAsync(id);
-            if (team == null)
+            var Tournooi = await _context.Tournooien.FindAsync(id);
+            if (Tournooi == null)
             {
                 return NotFound();
             }
 
-            _context.Teams.Remove(team);
+            _context.Tournooien.Remove(Tournooi);
             await _context.SaveChangesAsync();
 
-            return team;
+            return Tournooi;
         }
 
-        private bool TeamExists(int id)
+        private bool TournooiExists(int id)
         {
-            return _context.Teams.Any(e => e.TeamID == id);
+            return _context.Tournooien.Any(e => e.TournooiID == id);
         }
     }
 }

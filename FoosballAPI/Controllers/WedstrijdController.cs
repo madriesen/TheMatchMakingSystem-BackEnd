@@ -14,52 +14,52 @@ namespace FoosballAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TeamController : ControllerBase
+    public class WedstrijdController : ControllerBase
     {
         private readonly ApiContext _context;
 
-        public TeamController(ApiContext context)
+        public WedstrijdController(ApiContext context)
         {
             _context = context;
         }
 
-        //GET: api/Team
+        //GET: api/Wedstrijd
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Team>>> GetTeams()
+        public async Task<ActionResult<IEnumerable<Wedstrijd>>> GetWedstrijds()
         {
-            return await _context.Teams.ToListAsync();
+            return await _context.Wedstrijden.ToListAsync();
         }
 
-        //GET: api/Team/{TeamID}
+        //GET: api/Wedstrijd/{WedstrijdID}
         [Authorize]
         [HttpGet("{id}")]
-        public async Task<ActionResult<Team>> GetTeamsByID(int id)
+        public async Task<ActionResult<Wedstrijd>> GetWedstrijdsByID(int id)
         {
-            return await _context.Teams.FindAsync(id);
+            return await _context.Wedstrijden.FindAsync(id);
         }
 
-        //POST: api/Team
+        //POST: api/Wedstrijd
         [HttpPost]
-        public async Task<ActionResult<Team>> PostTeam(Team team)
+        public async Task<ActionResult<Wedstrijd>> PostWedstrijd(Wedstrijd wedstrijd)
         {
-            _context.Teams.Add(team);
+            _context.Wedstrijden.Add(wedstrijd);
             await _context.SaveChangesAsync();
 
-            return Ok(team);
+            return Ok(wedstrijd);
         }
 
-        // PUT: api/Team/{TeamID}
+        // PUT: api/Wedstrijd/{WedstrijdID}
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<ActionResult<Team>> PutTeam(int id, Team team)
+        public async Task<ActionResult<Wedstrijd>> PutWedstrijd(int id, Wedstrijd wedstrijd)
         {
-            if (id != team.TeamID)
+            if (id != wedstrijd.WedstrijdID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(team).State = EntityState.Modified;
+            _context.Entry(wedstrijd).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace FoosballAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TeamExists(id))
+                if (!WedstrijdExists(id))
                 {
                     return NotFound();
                 }
@@ -77,29 +77,29 @@ namespace FoosballAPI.Controllers
                 }
             }
 
-            return team;
+            return wedstrijd;
         }
 
-        //DELETE: api/Team/{TeamID}
+        //DELETE: api/Wedstrijd/{WedstrijdID}
         [HttpDelete("{id}")]
         [Authorize]
-        public async Task<ActionResult<Team>> DeleteTeam(int id)
+        public async Task<ActionResult<Wedstrijd>> DeleteWedstrijd(int id)
         {
-            var team = await _context.Teams.FindAsync(id);
-            if (team == null)
+            var wedstrijd = await _context.Wedstrijden.FindAsync(id);
+            if (wedstrijd == null)
             {
                 return NotFound();
             }
 
-            _context.Teams.Remove(team);
+            _context.Wedstrijden.Remove(wedstrijd);
             await _context.SaveChangesAsync();
 
-            return team;
+            return wedstrijd;
         }
 
-        private bool TeamExists(int id)
+        private bool WedstrijdExists(int id)
         {
-            return _context.Teams.Any(e => e.TeamID == id);
+            return _context.Wedstrijden.Any(e => e.WedstrijdID == id);
         }
     }
 }

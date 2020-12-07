@@ -14,37 +14,29 @@ namespace FoosballAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RoleController : ControllerBase
+    public class TableWedstrijdController : ControllerBase
     {
         private readonly ApiContext _context;
 
-        public RoleController(ApiContext context)
+        public TableWedstrijdController(ApiContext context)
         {
             _context = context;
         }
 
-        // GET: api/Role
+        //GET: api/TableWedstrijd
+        [Authorize]
         [HttpGet]
-        [Authorize]
-        public async Task<ActionResult<IEnumerable<Role>>> GetRoles()
+        public async Task<ActionResult<IEnumerable<TableWedstrijd>>> GetTableWedstrijds()
         {
-            return await _context.Roles.ToListAsync();
+            return await _context.TableWedstrijden.ToListAsync();
         }
 
-        // GET: api/Role/{roleID}
+        //GET: api/TableWedstrijd/{TableWedstrijdID}
+        [Authorize]
         [HttpGet("{id}")]
-        [Authorize]
-        public async Task<ActionResult<Role>> GetRole(int id)
+        public async Task<ActionResult<TableWedstrijd>> GetTableWedstrijdsByID(int id)
         {
-            var role = await _context.Roles.FindAsync(id);
-
-            if (role == null)
-            {
-                return NotFound();
-            }
-
-            return role;
+            return await _context.TableWedstrijden.FindAsync(id);
         }
-
     }
 }
