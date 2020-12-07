@@ -7,11 +7,11 @@ namespace FoosballAPI.Models
 {
     public class Team
     {
-        public static object Claims { get; internal set; }
         public long  TeamID { get; set; }
         public string Name { get; set; }
         public string CompanyName { get; set; }
         public string Location { get; set; }
+        public string Foto { get; set; }
 
         //Relations
         public int CaptainID { get; set; }

@@ -14,52 +14,52 @@ namespace FoosballAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TableController : ControllerBase
+    public class WedstrijdController : ControllerBase
     {
         private readonly ApiContext _context;
 
-        public TableController(ApiContext context)
+        public WedstrijdController(ApiContext context)
         {
             _context = context;
         }
 
-        //GET: api/Table
+        //GET: api/Wedstrijd
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Table>>> GetTables()
+        public async Task<ActionResult<IEnumerable<Wedstrijd>>> GetWedstrijds()
         {
-            return await _context.Tables.ToListAsync();
+            return await _context.Wedstrijden.ToListAsync();
         }
 
-        //GET: api/Table/{TableID}
+        //GET: api/Wedstrijd/{WedstrijdID}
         [Authorize]
         [HttpGet("{id}")]
-        public async Task<ActionResult<Table>> GetTablesByID(int id)
+        public async Task<ActionResult<Wedstrijd>> GetWedstrijdsByID(int id)
         {
-            return await _context.Tables.FindAsync(id);
+            return await _context.Wedstrijden.FindAsync(id);
         }
 
-        //POST: api/Table
+        //POST: api/Wedstrijd
         [HttpPost]
-        public async Task<ActionResult<Table>> PostTable(Table table)
+        public async Task<ActionResult<Wedstrijd>> PostWedstrijd(Wedstrijd wedstrijd)
         {
-            _context.Tables.Add(table);
+            _context.Wedstrijden.Add(wedstrijd);
             await _context.SaveChangesAsync();
 
-            return Ok(table);
+            return Ok(wedstrijd);
         }
 
-        // PUT: api/Table/{TableID}
+        // PUT: api/Wedstrijd/{WedstrijdID}
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<ActionResult<Table>> PutTable(int id, Table table)
+        public async Task<ActionResult<Wedstrijd>> PutWedstrijd(int id, Wedstrijd wedstrijd)
         {
-            if (id != table.TableID)
+            if (id != wedstrijd.WedstrijdID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(table).State = EntityState.Modified;
+            _context.Entry(wedstrijd).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace FoosballAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TableExists(id))
+                if (!WedstrijdExists(id))
                 {
                     return NotFound();
                 }
@@ -77,29 +77,29 @@ namespace FoosballAPI.Controllers
                 }
             }
 
-            return table;
+            return wedstrijd;
         }
 
-        //DELETE: api/Table/{TableID}
+        //DELETE: api/Wedstrijd/{WedstrijdID}
         [HttpDelete("{id}")]
         [Authorize]
-        public async Task<ActionResult<Table>> DeleteTable(int id)
+        public async Task<ActionResult<Wedstrijd>> DeleteWedstrijd(int id)
         {
-            var table = await _context.Tables.FindAsync(id);
-            if (table == null)
+            var wedstrijd = await _context.Wedstrijden.FindAsync(id);
+            if (wedstrijd == null)
             {
                 return NotFound();
             }
 
-            _context.Tables.Remove(table);
+            _context.Wedstrijden.Remove(wedstrijd);
             await _context.SaveChangesAsync();
 
-            return table;
+            return wedstrijd;
         }
 
-        private bool TableExists(int id)
+        private bool WedstrijdExists(int id)
         {
-            return _context.Tables.Any(e => e.TableID == id);
+            return _context.Wedstrijden.Any(e => e.WedstrijdID == id);
         }
     }
 }
