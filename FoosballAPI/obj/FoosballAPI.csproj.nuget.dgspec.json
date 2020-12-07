@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\FoosballAPI.csproj": {}
+    "E:\\school\\2020-2021\\Angular\\TheMatchMakingSystemAPI\\FoosballAPI\\FoosballAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\FoosballAPI.csproj": {
+    "E:\\school\\2020-2021\\Angular\\TheMatchMakingSystemAPI\\FoosballAPI\\FoosballAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\FoosballAPI.csproj",
+        "projectUniqueName": "E:\\school\\2020-2021\\Angular\\TheMatchMakingSystemAPI\\FoosballAPI\\FoosballAPI.csproj",
         "projectName": "FoosballAPI",
-        "projectPath": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\FoosballAPI.csproj",
-        "packagesPath": "C:\\Users\\r0740656\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\obj\\",
+        "projectPath": "E:\\school\\2020-2021\\Angular\\TheMatchMakingSystemAPI\\FoosballAPI\\FoosballAPI.csproj",
+        "packagesPath": "C:\\Users\\gustv\\.nuget\\packages\\",
+        "outputPath": "E:\\school\\2020-2021\\Angular\\TheMatchMakingSystemAPI\\FoosballAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\r0740656\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gustv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +43,10 @@
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
