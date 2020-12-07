@@ -209,3 +209,8 @@ E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcor
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.pdb
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.genruntimeconfig.cache
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.MvcApplicationPartsAssemblyInfo.cs
