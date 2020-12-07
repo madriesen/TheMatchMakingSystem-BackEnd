@@ -24,6 +24,21 @@
           "buildTransitive/netcoreapp3.0/EntityFramework.targets": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -1631,6 +1646,20 @@
         "tools/netcoreapp3.0/any/ef6.dll",
         "tools/netcoreapp3.0/any/ef6.pdb",
         "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.0": {
+      "sha512": "Ui/tHIXkUa2daOeHKoHSRE8r0U/i9ar0wAeeUPt3ILidsrXVcq4A7wX9g6AJjVBW6Va0Elw1/JNtyrk+wz5pSg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.3.1.0.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -6019,25 +6048,26 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "EntityFramework >= 6.4.4",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
       "System.Data.SqlClient >= 4.8.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\r0740656\\.nuget\\packages\\": {}
+    "C:\\Users\\gustv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\FoosballAPI.csproj",
+      "projectUniqueName": "E:\\school\\2020-2021\\Angular\\TheMatchMakingSystemAPI\\FoosballAPI\\FoosballAPI.csproj",
       "projectName": "FoosballAPI",
-      "projectPath": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\FoosballAPI.csproj",
-      "packagesPath": "C:\\Users\\r0740656\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\obj\\",
+      "projectPath": "E:\\school\\2020-2021\\Angular\\TheMatchMakingSystemAPI\\FoosballAPI\\FoosballAPI.csproj",
+      "packagesPath": "C:\\Users\\gustv\\.nuget\\packages\\",
+      "outputPath": "E:\\school\\2020-2021\\Angular\\TheMatchMakingSystemAPI\\FoosballAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\r0740656\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gustv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6066,6 +6096,10 @@
           "EntityFramework": {
             "target": "Package",
             "version": "[6.4.4, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[3.1.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
