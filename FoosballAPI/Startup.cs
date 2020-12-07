@@ -28,7 +28,7 @@ namespace FoosballAPI
         {
             services.AddControllers();
 
-            services.AddDbContext<AppContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<AppContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6025,19 +6025,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aiman\\.nuget\\packages\\": {}
+    "C:\\Users\\r0740656\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\School\\2020 - 2021\\Angular\\Projects\\FoosballAPI\\FoosballAPI\\FoosballAPI.csproj",
+      "projectUniqueName": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\FoosballAPI.csproj",
       "projectName": "FoosballAPI",
-      "projectPath": "D:\\School\\2020 - 2021\\Angular\\Projects\\FoosballAPI\\FoosballAPI\\FoosballAPI.csproj",
-      "packagesPath": "C:\\Users\\aiman\\.nuget\\packages\\",
-      "outputPath": "D:\\School\\2020 - 2021\\Angular\\Projects\\FoosballAPI\\FoosballAPI\\obj\\",
+      "projectPath": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\FoosballAPI.csproj",
+      "packagesPath": "C:\\Users\\r0740656\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\r0740656\\Documents\\School\\Angular\\TheMatchMakingSystem-BackEnd\\FoosballAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\aiman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\r0740656\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6049,6 +6049,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6060,6 +6061,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "EntityFramework": {
             "target": "Package",
@@ -6096,7 +6098,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
