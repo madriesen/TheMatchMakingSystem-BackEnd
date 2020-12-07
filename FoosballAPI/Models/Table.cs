@@ -14,9 +14,9 @@ namespace FoosballAPI.Models
         public string Adres { get; set; }
 
         //Relations
-        public int UserId { get; set; }
+        public int UserID { get; set; }
         public User User { get; set; }
         [JsonIgnore]
-        public ICollection<TableWedstrijd> TableWedstrijden { get; set; }
+        public ICollection<Wedstrijd> Wedstrijden { get; set; }
     }
 }

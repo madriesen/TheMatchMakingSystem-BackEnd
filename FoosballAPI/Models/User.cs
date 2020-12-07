@@ -13,7 +13,7 @@ namespace FoosballAPI.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public DateTime dOB { get; set; }
+        public DateTime Dob { get; set; }
         public string Address { get; set; }
         public string Town { get; set; }
         public string ZipCode { get; set; }
@@ -27,6 +27,8 @@ namespace FoosballAPI.Models
         public Role Role { get; set; }
         public int? PloegID { get; set; }
         public Ploeg? Ploeg { get; set; }
+        [JsonIgnore]
+        public ICollection<Table>? Tables { get; set; }
         [JsonIgnore]
         public ICollection<Team> Teams { get; set; }
     }
