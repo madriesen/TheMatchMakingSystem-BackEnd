@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoosballAPI.Models;
+using FoosballAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,10 +31,14 @@ namespace FoosballAPI
             services.AddControllers();
 
             //services.AddDbContext<AppContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<ApiContext>(opt =>
+                opt.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApiContext context)
         {
             if (env.IsDevelopment())
             {
@@ -49,6 +55,8 @@ namespace FoosballAPI
             {
                 endpoints.MapControllers();
             });
+
+            DBInitializer.Initialize(context);
         }
     }
 }

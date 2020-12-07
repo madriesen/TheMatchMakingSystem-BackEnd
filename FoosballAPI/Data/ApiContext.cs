@@ -19,7 +19,6 @@ namespace FoosballAPI.Data
         public DbSet<Table> Tables { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Wedstrijd> Wedstrijden { get; set; }
-        public DbSet<TableWedstrijd> TableWedstrijden { get; set; }
         public DbSet<WedstrijdType> WedstrijdTypes { get; set; }
         public DbSet<Tournooi> Tournooien { get; set; }
         public DbSet<Ploeg> Ploegen { get; set; }
@@ -30,7 +29,6 @@ namespace FoosballAPI.Data
             modelBuilder.Entity<Table>().ToTable("Table");
             modelBuilder.Entity<Role>().ToTable("Role");
             modelBuilder.Entity<Wedstrijd>().ToTable("Wedstrijd");
-            modelBuilder.Entity<TableWedstrijd>().ToTable("TableWedstrijd");
             modelBuilder.Entity<WedstrijdType>().ToTable("WedstrijdType");
             modelBuilder.Entity<Tournooi>().ToTable("Tournooi");
             modelBuilder.Entity<Ploeg>().ToTable("Ploeg");

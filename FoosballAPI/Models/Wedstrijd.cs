@@ -13,13 +13,15 @@ namespace FoosballAPI.Models
         public int RondeNummer { get; set; }
         
         //Relations
-        public int UserID { get; set; }
-        public User User { get; set; }
         public int WedstrijdTypeID { get; set; }
         public WedstrijdType WedstrijdType { get; set; }
         public int TournooiID { get; set; }
         public Tournooi Tournooi { get; set; }
-        [JsonIgnore]
-        public ICollection<TableWedstrijd> TableWedstrijden { get; set; }
+        public int TableID { get; set; }
+        public Table Table { get; set; }
+        public int Team1ID { get; set; }
+        public Team Team1 { get; set; }
+        public int Team2ID { get; set; }
+        public Team Team2 { get; set; }
     }
 }
