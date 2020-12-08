@@ -7,7 +7,7 @@ namespace FoosballAPI.Models
 {
     public class Role
     {
-        public long RoleID { get; set; }
+        public int RoleID { get; set; }
         public string Name { get; set; }
     }
 }

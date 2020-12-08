@@ -27,10 +27,16 @@ namespace FoosballAPI.Services
 
         public User Authenticate(string email, string password)
         {
+<<<<<<< HEAD
             var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Email == email && x.Password == password);
+=======
+            var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Username == username);
+>>>>>>> main
 
             // return null if user not found
             if (user == null)
+                return null;
+            if (!BCrypt.Net.BCrypt.Verify(password, user.Password))
                 return null;
 
             // authentication successful so generate jwt token
@@ -43,7 +49,7 @@ namespace FoosballAPI.Services
                     new Claim("UserID", user.UserID.ToString()),
                     new Claim("Email", user.Email),
                     new Claim("RoleID", user.RoleID.ToString()),
-                    //new Claim("Role", user.Role.Name)
+                    new Claim("Role", user.Role.Name)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
