@@ -9,7 +9,7 @@ namespace FoosballAPI.Models
 {
     public class Team
     {
-        public long  TeamID { get; set; }
+        public int TeamID { get; set; }
 
         //Relations
         public int PloegID { get; set; }
@@ -18,7 +18,7 @@ namespace FoosballAPI.Models
         [NotMapped]
         public User Player1 { get; set; }
 
-        public int Player2ID { get; set; }
+        public int? Player2ID { get; set; }
         public User Player2 { get; set; }
         [JsonIgnore]
         [NotMapped]

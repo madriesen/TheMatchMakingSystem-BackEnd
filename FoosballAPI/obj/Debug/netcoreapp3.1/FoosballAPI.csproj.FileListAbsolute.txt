@@ -195,7 +195,6 @@ E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcor
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.csprojAssemblyReference.cache
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.AssemblyInfoInputs.cache
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.AssemblyInfo.cs
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.csproj.CoreCompileInputs.cache
@@ -214,3 +213,4 @@ E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcor
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\school\2020-2021\Angular\TheMatchMakingSystemAPI\FoosballAPI\obj\Debug\netcoreapp3.1\FoosballAPI.csprojAssemblyReference.cache

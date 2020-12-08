@@ -8,7 +8,7 @@ namespace FoosballAPI.Models
 {
     public class Ploeg
     {
-        public long PloegID { get; set; }
+        public int PloegID { get; set; }
         public string Name { get; set; }
         public string CompanyName { get; set; }
         public string Location { get; set; }

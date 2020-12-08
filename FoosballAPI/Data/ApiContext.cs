@@ -24,14 +24,19 @@ namespace FoosballAPI.Data
         public DbSet<Ploeg> Ploegen { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Role>().ToTable("Role");
+            modelBuilder.Entity<Tournooi>().ToTable("Tournooi");
+            modelBuilder.Entity<WedstrijdType>().ToTable("WedstrijdType");
             modelBuilder.Entity<User>().ToTable("User");
             modelBuilder.Entity<Team>().ToTable("Team");
-            modelBuilder.Entity<Table>().ToTable("Table");
-            modelBuilder.Entity<Role>().ToTable("Role");
-            modelBuilder.Entity<Wedstrijd>().ToTable("Wedstrijd");
-            modelBuilder.Entity<WedstrijdType>().ToTable("WedstrijdType");
-            modelBuilder.Entity<Tournooi>().ToTable("Tournooi");
             modelBuilder.Entity<Ploeg>().ToTable("Ploeg");
+            modelBuilder.Entity<Table>().ToTable("Table");
+            modelBuilder.Entity<Wedstrijd>().ToTable("Wedstrijd");
+
+
+
+
+
         }
     }
 }
