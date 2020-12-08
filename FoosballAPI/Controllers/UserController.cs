@@ -64,12 +64,16 @@ namespace FoosballAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+      
+
+
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
             return Ok(user);
         }
-
+        
         //api/User/authenticate
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody] User userParam)
@@ -78,7 +82,7 @@ namespace FoosballAPI.Controllers
 
             if (user == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
-
+         
             return Ok(user);
         }
 
