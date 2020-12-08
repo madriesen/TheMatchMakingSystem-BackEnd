@@ -8,10 +8,15 @@ namespace FoosballAPI.Models
 {
     public class Table
     {
-        public long TableID { get; set; }
+        public int TableID { get; set; }
         public string Name { get; set; }
         public string? CompanyName { get; set; }
+
         public string Address { get; set; }
+
+        public string Postalcode { get; set; }
+        public string City { get; set; }
+
 
         //Relations
         public int UserID { get; set; }

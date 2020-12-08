@@ -7,7 +7,7 @@ namespace FoosballAPI.Models
 {
     public class Tournooi
     {
-        public long TournooiID { get; set; }
+        public int TournooiID { get; set; }
         public string Name { get; set; }
 
         //Relations

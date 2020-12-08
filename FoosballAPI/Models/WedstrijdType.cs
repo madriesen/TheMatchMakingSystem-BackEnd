@@ -7,7 +7,7 @@ namespace FoosballAPI.Models
 {
     public class WedstrijdType
     {
-        public long WedstrijdTypeID { get; set; }
+        public int WedstrijdTypeID { get; set; }
         public string Name { get; set; }
     }
 }
