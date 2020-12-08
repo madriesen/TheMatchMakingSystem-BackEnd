@@ -11,9 +11,12 @@ namespace FoosballAPI.Models
         public int TableID { get; set; }
         public string Name { get; set; }
         public string? CompanyName { get; set; }
-        public string Adres { get; set; }
+
+        public string Address { get; set; }
+
         public string Postalcode { get; set; }
         public string City { get; set; }
+
 
         //Relations
         public int UserID { get; set; }
