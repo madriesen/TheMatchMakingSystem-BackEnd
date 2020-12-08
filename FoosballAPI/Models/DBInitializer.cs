@@ -25,8 +25,8 @@ namespace FoosballAPI.Models
             context.SaveChanges();
 
             context.Users.AddRange(
-                new User { Username = "user", Password = "user", FirstName = "user", LastName = "Test", Email = "user.user@thomasmore.be", Address = "Doelenstraat 46", Dob = new DateTime(1989, 11, 19), RoleID = 1, Town = "Geel"},
-                new User { Username = "admin", Password = "admin", FirstName = "admin", LastName = "Test", Email = "admin.admin@thomasmore.be", Address = "Doelenstraat 46", Dob = new DateTime(1989, 11, 19), RoleID = 2, Town = "Geel" });
+                new User { Username = "user", Password = BCrypt.Net.BCrypt.HashPassword("user"), FirstName = "user", LastName = "Test", Email = "user.user@thomasmore.be", Address = "Doelenstraat 46", Dob = new DateTime(1989, 11, 19), RoleID = 1, Town = "Geel"},
+                new User { Username = "admin", Password = BCrypt.Net.BCrypt.HashPassword("admin"), FirstName = "admin", LastName = "Test", Email = "admin.admin@thomasmore.be", Address = "Doelenstraat 46", Dob = new DateTime(1989, 11, 19), RoleID = 2, Town = "Geel" });
             context.SaveChanges();
         }
     }
