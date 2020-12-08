@@ -25,9 +25,9 @@ namespace FoosballAPI.Services
             _Context = context;
         }
 
-        public User Authenticate(string username, string password)
+        public User Authenticate(string email, string password)
         {
-            var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Username == username && x.Password == password);
+            var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Email == email && x.Password == password);
 
             // return null if user not found
             if (user == null)
@@ -42,7 +42,6 @@ namespace FoosballAPI.Services
                 {
                     new Claim("UserID", user.UserID.ToString()),
                     new Claim("Email", user.Email),
-                    new Claim("Username", user.Username),
                     new Claim("RoleID", user.RoleID.ToString()),
                     //new Claim("Role", user.Role.Name)
                 }),

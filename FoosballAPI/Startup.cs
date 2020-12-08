@@ -70,7 +70,10 @@ namespace FoosballAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApiContext context)
         {
-            app.UseSwagger(); app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Member API v1"); });
+            app.UseSwagger();
+            app.UseSwaggerUI(c => 
+            { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Foosball API v1"); 
+            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
