@@ -45,7 +45,7 @@ namespace FoosballAPI.Controllers
 
         //GET: api/User/admins
         [Authorize]
-        [HttpGet("journalists")]
+        [HttpGet("admins")]
         public async Task<ActionResult<IEnumerable<User>>> getAdmins()
         {
             var users = await _context.Users.ToListAsync();
