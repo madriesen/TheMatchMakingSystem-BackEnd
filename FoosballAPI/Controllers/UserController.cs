@@ -45,7 +45,7 @@ namespace FoosballAPI.Controllers
 
         //GET: api/User/admins
         [Authorize]
-        [HttpGet("journalists")]
+        [HttpGet("admins")]
         public async Task<ActionResult<IEnumerable<User>>> getAdmins()
         {
             var users = await _context.Users.ToListAsync();
@@ -81,13 +81,11 @@ namespace FoosballAPI.Controllers
             var user = _userService.Authenticate(userParam.Email, userParam.Password);
 
             if (user == null)
-<<<<<<< HEAD
+
                 return BadRequest(new { message = "Email or password is incorrect" });
 
-=======
-                return BadRequest(new { message = "Username or password is incorrect" });
          
->>>>>>> main
+
             return Ok(user);
         }
 

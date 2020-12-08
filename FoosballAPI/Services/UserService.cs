@@ -26,8 +26,8 @@ namespace FoosballAPI.Services
         }
 
         public User Authenticate(string email, string password)
-
-            var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Email == email && x.Password == password);
+        {
+            var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Email == email);
 
             // return null if user not found
             if (user == null)
