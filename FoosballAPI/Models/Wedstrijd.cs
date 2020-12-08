@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace FoosballAPI.Models
 {
     public class Wedstrijd
     {
-        public long WedstrijdID { get; set; }
+        public int WedstrijdID { get; set; }
         public DateTime Date { get; set; }
         public int RondeNummer { get; set; }
         
@@ -19,9 +20,11 @@ namespace FoosballAPI.Models
         public Tournooi Tournooi { get; set; }
         public int TableID { get; set; }
         public Table Table { get; set; }
+
         public int Team1ID { get; set; }
         public Team Team1 { get; set; }
-        public int Team2ID { get; set; }
+     
+        public int? Team2ID { get; set; }
         public Team Team2 { get; set; }
     }
 }

@@ -44,7 +44,7 @@ namespace FoosballAPI.Services
                     new Claim("Email", user.Email),
                     new Claim("Username", user.Username),
                     new Claim("RoleID", user.RoleID.ToString()),
-                    //new Claim("Role", user.Role.Name)
+                    new Claim("Role", user.Role.Name)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
