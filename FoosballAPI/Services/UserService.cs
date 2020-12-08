@@ -27,10 +27,12 @@ namespace FoosballAPI.Services
 
         public User Authenticate(string username, string password)
         {
-            var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Username == username && x.Password == password);
+            var user = _Context.Users.Include(r=>r.Role).SingleOrDefault(x => x.Username == username);
 
             // return null if user not found
             if (user == null)
+                return null;
+            if (!BCrypt.Net.BCrypt.Verify(password, user.Password))
                 return null;
 
             // authentication successful so generate jwt token
