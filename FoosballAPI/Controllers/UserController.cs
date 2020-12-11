@@ -31,7 +31,7 @@ namespace FoosballAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            var username = User.Claims.FirstOrDefault(c => c.Type == "Username").Value;
+            
             return await _context.Users.ToListAsync();
         }
 
