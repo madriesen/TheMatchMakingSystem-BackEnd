@@ -12,13 +12,15 @@ namespace FoosballAPI.Models
         public int TeamID { get; set; }
 
         //Relations
-        public int PloegID { get; set; }
+        public int? PloegID { get; set; }
         public Ploeg Ploeg { get; set; }
-        public int Player1Id { get; set; }
-        [NotMapped]
-        public User Player1 { get; set; }
 
+        public int? Player1ID { get; set; }
+        [ForeignKey("Player1ID")]
+        public User Player1 { get; set; }
+        
         public int? Player2ID { get; set; }
+        [ForeignKey("Player2ID")]
         public User Player2 { get; set; }
         [JsonIgnore]
         [NotMapped]
