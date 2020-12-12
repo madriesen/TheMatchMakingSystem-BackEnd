@@ -30,7 +30,14 @@ namespace FoosballAPI.Controllers
         {
             return await _context.Teams.ToListAsync();
         }
-
+        //GET: api/Team/MyTeams
+        [Authorize]
+        [HttpGet("myTeams")]
+        public async Task<ActionResult<IEnumerable<Team>>> GetMyTeams()
+        {
+            int userID = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserID").Value);
+            return await _context.Teams.Where(u => u.Player1ID == userID || u.Player2ID == userID).ToListAsync();
+        }
         //GET: api/Team/{TeamID}
         [Authorize]
         [HttpGet("{id}")]

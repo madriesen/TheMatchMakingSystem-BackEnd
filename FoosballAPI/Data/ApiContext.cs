@@ -34,10 +34,12 @@ namespace FoosballAPI.Data
             modelBuilder.Entity<Score>().ToTable("Score");
             modelBuilder.Entity<Team>().ToTable("Team");
             modelBuilder.Entity<Team>().HasMany(u => u.Scores).WithOne(u => u.Winnaar);
+            modelBuilder.Entity<Team>().HasMany(u => u.Wedstrijden).WithOne(u => u.Team1);
             modelBuilder.Entity<Ploeg>().ToTable("Ploeg");
             modelBuilder.Entity<Table>().ToTable("Table");
             modelBuilder.Entity<Wedstrijd>().ToTable("Wedstrijd");
             modelBuilder.Entity<Wedstrijd>().HasMany(u => u.Scores).WithOne(u => u.Wedstrijd);
+            modelBuilder.Entity<Wedstrijd>().HasOne(u=>u.Winnaar).WithMany(u=> u.GewonnenWedstrijden);
 
 
 

@@ -28,7 +28,7 @@ namespace FoosballAPI.Models
                 new Ploeg { Name = "Ploeg 2", CompanyName = "Alectra", Address = "Hardloopstraat 49", Town = "Rood", ZipCode = "4756"}
                );
             context.SaveChanges();
-
+            
 
             context.Users.AddRange(
 
