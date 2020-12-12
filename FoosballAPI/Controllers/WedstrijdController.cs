@@ -38,6 +38,20 @@ namespace FoosballAPI.Controllers
         {
             return await _context.Wedstrijden.FindAsync(id);
         }
+        //GET: api/Wedstrijd/team/{teamid}
+        [Authorize]
+        [HttpGet("team/{teamid}")]
+        public async Task<ActionResult<IEnumerable<Wedstrijd>>> GetWedstrijdOfTeam(int teamid)
+        {
+            return await _context.Wedstrijden.Where(u => u.WinnaarID == 0 && u.Team1ID == teamid || u.Team2ID == teamid).ToListAsync();
+        }
+        //GET: api/Wedstrijd/open
+        [Authorize]
+        [HttpGet("open")]
+        public async Task<ActionResult<IEnumerable<Wedstrijd>>> GetWedstrijdOpen()
+        {
+            return await _context.Wedstrijden.Where(u => u.WinnaarID == 0).ToListAsync();
+        }
 
         //POST: api/Wedstrijd
         [HttpPost]

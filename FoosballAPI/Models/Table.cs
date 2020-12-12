@@ -12,7 +12,7 @@ namespace FoosballAPI.Models
         public string Name { get; set; }
 
         //Relations
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         public User User { get; set; }
         public int? PloegID { get; set; }
         public Ploeg Ploeg { get; set; }

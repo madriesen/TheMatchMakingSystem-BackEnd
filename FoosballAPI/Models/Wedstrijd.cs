@@ -26,6 +26,8 @@ namespace FoosballAPI.Models
      
         public int? Team2ID { get; set; }
         public Team Team2 { get; set; }
+        public int? WinnaarID { get; set; }
+        public Team Winnaar { get; set; }
         [JsonIgnore]
         public ICollection<Score> Scores { get; set; }
     }

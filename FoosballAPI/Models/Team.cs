@@ -27,5 +27,7 @@ namespace FoosballAPI.Models
         public ICollection<Wedstrijd> Wedstrijden { get; set; }
         [JsonIgnore]
         public ICollection<Score> Scores { get; set; }
+        [JsonIgnore]
+        public ICollection<Wedstrijd> GewonnenWedstrijden { get; set; }
     }
 }
