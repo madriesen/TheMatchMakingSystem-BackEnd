@@ -43,9 +43,9 @@ namespace FoosballAPI.Models
             context.SaveChanges();
             
             context.Teams.AddRange(
-                new Team { PloegID= 1, Player1ID = 7, Player2ID = 6},
-                new Team { PloegID = 2, Player1ID = 3, Player2ID = 4 },
-                new Team { PloegID = 2, Player1ID = 3, Player2ID = 5 }
+                new Team { PloegID= 1, Name = "Team 1", Player1ID = 7, Player2ID = 6},
+                new Team { PloegID = 2, Name = "Team 1", Player1ID = 3, Player2ID = 4 },
+                new Team { PloegID = 2, Name = "Team 2", Player1ID = 3, Player2ID = 5 }
 
              );
             context.SaveChanges();
