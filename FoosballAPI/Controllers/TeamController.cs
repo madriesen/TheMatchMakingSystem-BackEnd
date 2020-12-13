@@ -35,7 +35,7 @@ namespace FoosballAPI.Controllers
         [HttpGet("withPloeg/{teamid}")]
         public async Task<ActionResult<Team>> GetTeamWithPloeg(int teamid)
         {
-            return await _context.Teams.Include(u=>u.Player1).Include(u => u.Player2).Include(u=>u.Ploeg).FirstAsync(x=> x.TeamID == teamid);
+            return await _context.Teams.Include(u=>u.Player1).Include(u => u.Player2).Include(u=>u.Ploeg).Include(u=>u.Wedstrijden).FirstAsync(x=> x.TeamID == teamid);
         }
         
         //GET: api/Team/MyTeams
