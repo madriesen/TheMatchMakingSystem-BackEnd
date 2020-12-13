@@ -44,7 +44,7 @@ namespace FoosballAPI.Controllers
         [HttpGet("team/{teamid}")]
         public async Task<ActionResult<IEnumerable<Wedstrijd>>> GetWedstrijdOfTeam(int teamid)
         {
-            return await _context.Wedstrijden.Where(u => u.Team1ID == teamid || u.Team2ID == teamid).ToListAsync();
+            return await _context.Wedstrijden.Where(u => u.Team1ID == teamid || u.Team2ID == teamid).Include(r=>r.Team1).Include(r => r.Team2).Include(r => r.WedstrijdType).Include(r => r.Tournooi).Include(r => r.Winnaar).ToListAsync();
         }
         
         //GET: api/Wedstrijd/open
