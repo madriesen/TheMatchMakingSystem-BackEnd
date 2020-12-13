@@ -38,6 +38,7 @@ namespace FoosballAPI.Controllers
         {
             return await _context.Wedstrijden.FindAsync(id);
         }
+
         //GET: api/Wedstrijd/team/{teamid}
         [Authorize]
         [HttpGet("team/{teamid}")]
