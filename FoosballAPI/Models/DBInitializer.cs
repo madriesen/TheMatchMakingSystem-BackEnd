@@ -32,13 +32,13 @@ namespace FoosballAPI.Models
 
             context.Users.AddRange(
 
-                new User { Password = BCrypt.Net.BCrypt.HashPassword("user"), FirstName = "user", LastName = "Test", Email = "user.user@thomasmore.be", Address = "Doelenstraat 46", Dob = new DateTime(1989, 11, 19), RoleID = 1, Town = "Geel", ZipCode = "2360", PloegID = 2 },
-                new User { Password = BCrypt.Net.BCrypt.HashPassword("admin"), FirstName = "admin", LastName = "Test", Email = "admin.admin@thomasmore.be", Address = "Doelenstraat 46", Dob = new DateTime(1989, 11, 19), RoleID = 2, Town = "Geel", ZipCode = "2360", PloegID = 1 },
-                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "Gust", LastName = "van der Sanden", Email = "gustvdsanden@gmail.com", Address = "Wijerken 41", Dob = new DateTime(1999, 08, 28), RoleID = 1, Town = "Lommel", ZipCode = "3920", PloegID=2 },
-                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "test", LastName = "user1", Email = "testuser1@gmail.com", Address = "Wijerken 41", Dob = new DateTime(1999, 08, 28), RoleID = 1, Town = "Lommel", ZipCode = "3920", PloegID = 2 },
-                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "test", LastName = "user2", Email = "testuser2@gmail.com", Address = "Wijerken 41", Dob = new DateTime(1999, 08, 28), RoleID = 1, Town = "Lommel", ZipCode = "3920", PloegID = 2 },
-                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "test", LastName = "user3", Email = "testuser3@gmail.com", Address = "Wijerken 41", Dob = new DateTime(1999, 08, 28), RoleID = 1, Town = "Lommel", ZipCode = "3920", PloegID = 1 },
-                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "Jorn", LastName = "Snoeks", Email = "jornsnoeks@gmail.com", Address = "Rechtsafendoor 46", Dob = new DateTime(1991, 6, 14), RoleID = 1, Town = "Lommel", ZipCode = "3920" , PloegID = 1 }
+                new User { Password = BCrypt.Net.BCrypt.HashPassword("user"), FirstName = "user", LastName = "Test", Email = "user.user@thomasmore.be", Address = "Doelenstraat 46", Dob = new DateTime(1989, 11, 19), RoleID = 1, Town = "Geel", ZipCode = "2360", PloegID = 2, Ranking = 14 },
+                new User { Password = BCrypt.Net.BCrypt.HashPassword("admin"), FirstName = "admin", LastName = "Test", Email = "admin.admin@thomasmore.be", Address = "Doelenstraat 46", Dob = new DateTime(1989, 11, 19), RoleID = 2, Town = "Geel", ZipCode = "2360", PloegID = 1, Ranking = 2 },
+                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "Gust", LastName = "van der Sanden", Email = "gustvdsanden@gmail.com", Address = "Wijerken 41", Dob = new DateTime(1999, 08, 28), RoleID = 1, Town = "Lommel", ZipCode = "3920", PloegID=2, Ranking = 53 },
+                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "test", LastName = "user1", Email = "testuser1@gmail.com", Address = "Wijerken 41", Dob = new DateTime(1999, 08, 28), RoleID = 1, Town = "Lommel", ZipCode = "3920", PloegID = 2, Ranking = 6 },
+                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "test", LastName = "user2", Email = "testuser2@gmail.com", Address = "Wijerken 41", Dob = new DateTime(1999, 08, 28), RoleID = 1, Town = "Lommel", ZipCode = "3920", PloegID = 2, Ranking = 4 },
+                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "test", LastName = "user3", Email = "testuser3@gmail.com", Address = "Wijerken 41", Dob = new DateTime(1999, 08, 28), RoleID = 1, Town = "Lommel", ZipCode = "3920", PloegID = 1 ,Ranking = 11},
+                new User { Password = BCrypt.Net.BCrypt.HashPassword("test"), FirstName = "Jorn", LastName = "Snoeks", Email = "jornsnoeks@gmail.com", Address = "Rechtsafendoor 46", Dob = new DateTime(1991, 6, 14), RoleID = 1, Town = "Lommel", ZipCode = "3920" , PloegID = 1,Ranking=10 }
                 );
             context.SaveChanges();
             
@@ -66,8 +66,8 @@ namespace FoosballAPI.Models
             context.SaveChanges();
          
             context.Tournooien.AddRange(
-                new Tournooi { Name="2019-2020"},
-                new Tournooi { Name = "2020-2021" }
+                new Tournooi { Name="2019-2020",Ploeg1ID= 1, Ploeg2ID=2},
+                new Tournooi { Name = "2020-2021", Ploeg1ID = 1, Ploeg2ID = 2 }
 
                 );
             context.SaveChanges();

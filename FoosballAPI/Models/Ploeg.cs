@@ -24,5 +24,7 @@ namespace FoosballAPI.Models
         public ICollection<User> Players { get; set; }
         [JsonIgnore]
         public ICollection<Team> Teams { get; set; }
+        [JsonIgnore]
+        public ICollection<Tournooi> Tournooien { get; set; }
     }
 }

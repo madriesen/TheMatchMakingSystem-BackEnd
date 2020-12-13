@@ -30,6 +30,13 @@ namespace FoosballAPI.Controllers
         {
             return await _context.Teams.ToListAsync();
         }
+        //GET: api/Team/withPloeg
+        [Authorize]
+        [HttpGet("withPloeg/{teamid}")]
+        public async Task<ActionResult<Team>> GetTeamWithPloeg(int teamid)
+        {
+            return await _context.Teams.Include(u=>u.Player1).Include(u => u.Player2).Include(u=>u.Ploeg).FirstAsync(x=> x.TeamID == teamid);
+        }
         //GET: api/Team/MyTeams
         [Authorize]
         [HttpGet("myTeams")]
