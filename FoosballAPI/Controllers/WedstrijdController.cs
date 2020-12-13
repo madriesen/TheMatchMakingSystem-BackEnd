@@ -38,6 +38,7 @@ namespace FoosballAPI.Controllers
         {
             return await _context.Wedstrijden.FindAsync(id);
         }
+
         //GET: api/Wedstrijd/team/{teamid}
         [Authorize]
         [HttpGet("team/{teamid}")]
@@ -45,6 +46,7 @@ namespace FoosballAPI.Controllers
         {
             return await _context.Wedstrijden.Where(u => u.Team1ID == teamid || u.Team2ID == teamid).ToListAsync();
         }
+        
         //GET: api/Wedstrijd/open
         [Authorize]
         [HttpGet("open")]

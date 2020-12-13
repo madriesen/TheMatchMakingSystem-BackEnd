@@ -22,7 +22,7 @@ namespace FoosballAPI.Models
         public int? Player2ID { get; set; }
         [ForeignKey("Player2ID")]
         public User Player2 { get; set; }
-        [JsonIgnore]
+   
         [NotMapped]
         public ICollection<Wedstrijd> Wedstrijden { get; set; }
         [JsonIgnore]

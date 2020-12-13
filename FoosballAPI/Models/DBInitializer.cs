@@ -73,7 +73,7 @@ namespace FoosballAPI.Models
             context.SaveChanges();
             
             context.Wedstrijden.AddRange(
-                new Wedstrijd {Date=new DateTime(2019,06,12), RondeNummer=1, WedstrijdTypeID=2, TournooiID=1,TableID=1,Team1ID=1,Team2ID=2 },
+                new Wedstrijd { Date=new DateTime(2019,06,12), RondeNummer=1, WedstrijdTypeID=2, TournooiID=1,TableID=1,Team1ID=1,Team2ID=2 },
                 new Wedstrijd { Date = new DateTime(2019, 06, 13), RondeNummer = 1, WedstrijdTypeID = 2, TournooiID = 1, TableID = 1, Team1ID = 1, Team2ID = 3 },
                 new Wedstrijd { Date = new DateTime(2019, 06, 14), RondeNummer = 2, WedstrijdTypeID = 2, TournooiID = 1, TableID = 2, Team1ID = 2, Team2ID = 3 }
                 );

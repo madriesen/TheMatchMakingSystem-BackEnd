@@ -34,9 +34,16 @@ namespace FoosballAPI.Controllers
         //GET: api/Tournooi/{TournooiID}
         [Authorize]
         [HttpGet("{id}")]
-        public async Task<ActionResult<Tournooi>> GetTournooisByID(int id)
+        public async Task<ActionResult<Tournooi>> GetTournooiByID(int id)
         {
             return await _context.Tournooien.FindAsync(id);
+        }
+        //GET: api/Tournooi/ploegen/{TournooiID}
+        [Authorize]
+        [HttpGet("ploegen/{id}")]
+        public async Task<ActionResult<Tournooi>> GetTournooiWithPloegenByID(int id)
+        {
+            return await _context.Tournooien.Include(u=>u.Ploeg1).Include(u => u.Ploeg2).FirstAsync(x=>x.TournooiID==id);
         }
 
         //POST: api/Tournooi
