@@ -11,6 +11,8 @@ namespace FoosballAPI.Models
     {
         public int TeamID { get; set; }
 
+        public string Name { get; set; }
+
         //Relations
         public int? PloegID { get; set; }
         public Ploeg Ploeg { get; set; }
