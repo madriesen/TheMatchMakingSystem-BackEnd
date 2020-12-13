@@ -46,6 +46,13 @@ namespace FoosballAPI.Controllers
             int userID = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserID").Value);
             return await _context.Teams.Where(u => u.Player1ID == userID || u.Player2ID == userID).ToListAsync();
         }
+        //GET: api/Team/ploeg/{ploegid}
+        [Authorize]
+        [HttpGet("ploeg/{ploegid}")]
+        public async Task<ActionResult<IEnumerable<Team>>> GetTeamsByPloegID(int ploegid)
+        {
+            return await _context.Teams.Where(u=>u.PloegID==ploegid).ToListAsync();
+        }
         //GET: api/Team/{TeamID}
         [Authorize]
         [HttpGet("{id}")]
