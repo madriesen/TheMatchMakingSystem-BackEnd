@@ -42,9 +42,9 @@ namespace FoosballAPI.Controllers
         {
             return await _context.Users.FindAsync(id);
         }
-        //GET: api/User/{ploegid}
+        //GET: api/User/ploeg{ploegid}
         [Authorize]
-        [HttpGet("{ploegid}")]
+        [HttpGet("ploeg/{ploegid}")]
         public async Task<ActionResult<User>> GetUsersByPloegID(int ploegid)
         {
             return await _context.Users.Where(c=>c.PloegID == ploegid).FirstAsync();
