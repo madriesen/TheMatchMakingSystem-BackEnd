@@ -51,7 +51,7 @@ namespace FoosballAPI.Controllers
         [HttpGet("ploeg/{ploegid}")]
         public async Task<ActionResult<IEnumerable<Team>>> GetTeamsByPloegID(int ploegid)
         {
-            return await _context.Teams.Where(u=>u.PloegID==ploegid).ToListAsync();
+            return await _context.Teams.Where(u=>u.PloegID==ploegid).Include(u => u.Player1).Include(u=>u.Player2).ToListAsync();
         }
         //GET: api/Team/{TeamID}
         [Authorize]
