@@ -38,8 +38,9 @@ namespace FoosballAPI.Controllers
         {
             return await _context.Ploegen.FindAsync(id);
         }
+        
         //GET: api/Ploeg/{PloegID}
-    
+
 
         //POST: api/Ploeg
         [HttpPost]

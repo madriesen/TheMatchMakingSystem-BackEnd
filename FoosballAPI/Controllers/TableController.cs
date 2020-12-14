@@ -31,6 +31,13 @@ namespace FoosballAPI.Controllers
             return await _context.Tables.ToListAsync();
         }
 
+        //GET: api/Table/ploeg/{ploegid}
+        [Authorize]
+        [HttpGet("ploeg/{ploegid}")]
+        public async Task<ActionResult<IEnumerable<Table>>> GetTablesByPloegID(int ploegid)
+        {
+            return await _context.Tables.Where(u=>u.PloegID==ploegid).ToListAsync();
+        }
         //GET: api/Table/{TableID}
         [Authorize]
         [HttpGet("{id}")]
