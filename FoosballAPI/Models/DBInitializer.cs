@@ -43,9 +43,9 @@ namespace FoosballAPI.Models
             context.SaveChanges();
             
             context.Teams.AddRange(
-                new Team { PloegID= 1, Name = "Team 1", Player1ID = 7, Player2ID = 6},
-                new Team { PloegID = 2, Name = "Team 1", Player1ID = 3, Player2ID = 4 },
-                new Team { PloegID = 2, Name = "Team 2", Player1ID = 3, Player2ID = 5 }
+                new Team { PloegID= 1, Name = "De Ketsers", Player1ID = 7, Player2ID = 6},
+                new Team { PloegID = 2, Name = "Pater Damiaan", Player1ID = 3, Player2ID = 4 },
+                new Team { PloegID = 2, Name = "Spice Girls", Player1ID = 3, Player2ID = 5 }
 
              );
             context.SaveChanges();
@@ -73,12 +73,12 @@ namespace FoosballAPI.Models
             context.SaveChanges();
             
             context.Wedstrijden.AddRange(
-                new Wedstrijd { Date=new DateTime(2019,06,12), RondeNummer=1, WedstrijdTypeID=2, TournooiID=1,TableID=1,Team1ID=1,Team2ID=2 },
-                new Wedstrijd { Date = new DateTime(2019, 06, 13), RondeNummer = 1, WedstrijdTypeID = 2, TournooiID = 1, TableID = 1, Team1ID = 1, Team2ID = 3 },
-                new Wedstrijd { Date = new DateTime(2019, 06, 14), RondeNummer = 2, WedstrijdTypeID = 2, TournooiID = 1, TableID = 2, Team1ID = 2, Team2ID = 3 }
+                new Wedstrijd { Date=new DateTime(2019,06,12), RondeNummer=1, WedstrijdTypeID=2, TournooiID=1,TableID=1,Team1ID=1,Team2ID=2,WinnaarID=1 },
+                new Wedstrijd { Date = new DateTime(2019, 06, 13), RondeNummer = 1, WedstrijdTypeID = 2, TournooiID = 1, TableID = 1, Team1ID = 1, Team2ID = 3,WinnaarID=3 },
+                new Wedstrijd { Date = new DateTime(2019, 06, 14), RondeNummer = 2, WedstrijdTypeID = 2, TournooiID = 1, TableID = 2, Team1ID = 2, Team2ID = 3, WinnaarID =3}
                 );
             context.SaveChanges();
-
+            
         }
     }
 }
