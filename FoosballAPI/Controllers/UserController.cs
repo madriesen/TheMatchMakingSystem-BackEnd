@@ -45,10 +45,11 @@ namespace FoosballAPI.Controllers
         //GET: api/User/ploeg{ploegid}
         [Authorize]
         [HttpGet("ploeg/{ploegid}")]
-        public async Task<ActionResult<User>> GetUsersByPloegID(int ploegid)
+        public async Task<ActionResult<IEnumerable<User>>> GetUsersByPloegID(int ploegid)
         {
-            return await _context.Users.Where(c=>c.PloegID == ploegid).FirstAsync();
+            return await _context.Users.Where(c=>c.PloegID == ploegid).ToListAsync();
         }
+
 
         //GET: api/User/admins
         [Authorize]

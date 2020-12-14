@@ -38,6 +38,7 @@ namespace FoosballAPI.Data
             modelBuilder.Entity<Ploeg>().ToTable("Ploeg");
             modelBuilder.Entity<Ploeg>().HasMany(u => u.Tournooien).WithOne(u => u.Ploeg1);
             modelBuilder.Entity<Table>().ToTable("Table");
+            modelBuilder.Entity<Table>().HasOne(u => u.Ploeg).WithMany(u => u.Tables);
             modelBuilder.Entity<Wedstrijd>().ToTable("Wedstrijd");
             modelBuilder.Entity<Wedstrijd>().HasMany(u => u.Scores).WithOne(u => u.Wedstrijd);
             modelBuilder.Entity<Wedstrijd>().HasOne(u=>u.Winnaar).WithMany(u=> u.GewonnenWedstrijden);
